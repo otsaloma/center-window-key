@@ -7,5 +7,10 @@
       <summary>Keybinding</summary>
       <description>Keybinding to center the focused window</description>
     </key>
+    <key name="center-all-windows-key" type="as">
+      <default>["&lt;Shift&gt;&lt;Super&gt;c"]</default>
+      <summary>Keybinding</summary>
+      <description>Keybinding to center all windows</description>
+    </key>
   </schema>
 </schemalist>

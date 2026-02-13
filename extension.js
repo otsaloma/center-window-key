@@ -15,19 +15,24 @@ export default class CenterWindowKeyExtension extends Extension {
             this._settings,
             Meta.KeyBindingFlags.NONE,
             Shell.ActionMode.ALL,
-            this._centerFocusedWindow,
+            this._centerFocusedWindow.bind(this),
+        );
+        Main.wm.addKeybinding(
+            "center-all-windows-key",
+            this._settings,
+            Meta.KeyBindingFlags.NONE,
+            Shell.ActionMode.ALL,
+            this._centerAllWindows.bind(this),
         );
     }
 
     disable() {
         Main.wm.removeKeybinding("center-window-key");
+        Main.wm.removeKeybinding("center-all-windows-key");
         this._settings = null;
     }
 
-    _centerFocusedWindow() {
-        const window = global.display.get_focus_window();
-        if (!window) return;
-        if (window.get_window_type() !== Meta.WindowType.NORMAL) return;
+    _centerWindow(window) {
         const monitor = window.get_monitor();
         const workArea = global.workspace_manager
               .get_active_workspace()
@@ -37,6 +42,20 @@ export default class CenterWindowKeyExtension extends Extension {
         const newX = workArea.x + Math.floor((workArea.width - frame.width) / 2);
         const newY = workArea.y + Math.floor((workArea.height - frame.height) / 2);
         window.move_frame(true, newX, newY);
+    }
+
+    _centerFocusedWindow() {
+        const window = global.display.get_focus_window();
+        if (!window) return;
+        if (window.get_window_type() !== Meta.WindowType.NORMAL) return;
+        this._centerWindow(window);
+    }
+
+    _centerAllWindows() {
+        const workspace = global.workspace_manager.get_active_workspace();
+        for (const window of workspace.list_windows())
+            if (window.get_window_type() === Meta.WindowType.NORMAL)
+                this._centerWindow(window);
     }
 
 }
