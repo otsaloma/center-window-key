@@ -1,6 +1,5 @@
 // -*- coding: utf-8-unix -*-
 
-import Gio from "gi://Gio";
 import Meta from "gi://Meta";
 import Shell from "gi://Shell";
 
@@ -10,9 +9,7 @@ import {Extension} from "resource:///org/gnome/shell/extensions/extension.js";
 export default class CenterWindowKeyExtension extends Extension {
 
     enable() {
-        this._settings = new Gio.Settings({
-            schema_id: "org.gnome.shell.extensions.center-window-key"
-        });
+        this._settings = this.getSettings();
         Main.wm.addKeybinding(
             "center-window-key",
             this._settings,

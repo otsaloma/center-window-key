@@ -4,5 +4,6 @@
   "uuid": "center-window-key@otsaloma.io",
   "shell-version": ["49"],
   "url": "https://github.com/otsaloma/center-window-key",
+  "settings-schema": "org.gnome.shell.extensions.center-window-key",
   "donations": {"paypal": "otsaloma"}
 }

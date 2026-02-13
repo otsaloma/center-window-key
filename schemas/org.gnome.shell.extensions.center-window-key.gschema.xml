@@ -2,7 +2,7 @@
 <schemalist>
   <schema id="org.gnome.shell.extensions.center-window-key"
           path="/org/gnome/shell/extensions/center-window-key/">
-    <key name="key" type="as">
+    <key name="center-window-key" type="as">
       <default>["&lt;Super&gt;c"]</default>
       <summary>Keybinding</summary>
       <description>Keybinding to center the focused window</description>

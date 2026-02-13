@@ -5,7 +5,7 @@ Center Window Key is a GNOME Shell extension to add a keybinding to
 center the currently focused window. The main implementation is in file
 `extension.js`.
 
-## General instructions
+## General Instructions
 
 * We're targeting GNOME 49 and later
 * We're targeting Wayland only

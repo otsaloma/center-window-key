@@ -9,8 +9,12 @@ check:
 
 clean:
 	rm -f $(PACK_FILE)
+	rm -f schemas/*.compiled
 
-install:
+compile-schemas:
+	glib-compile-schemas schemas
+
+install: compile-schemas
 	mkdir -p $(INSTALL_DIR)
 	cp -f extension.js $(INSTALL_DIR)
 	cp -f metadata.json $(INSTALL_DIR)
@@ -24,4 +28,4 @@ pack: check clean
 run:
 	dbus-run-session gnome-shell --devkit --wayland
 
-.PHONY: check clean install pack run
+.PHONY: check clean compile-schemas install pack run
