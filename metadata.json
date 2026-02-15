@@ -1,6 +1,6 @@
 {
   "name": "Center Window Key",
-  "description": "Add keybinding to center the currently focused window",
+  "description": "Add keybindings to center windows.",
   "uuid": "center-window-key@otsaloma.io",
   "shell-version": ["49"],
   "url": "https://github.com/otsaloma/center-window-key",

@@ -1,9 +1,8 @@
 AGENTS.md
 =========
 
-Center Window Key is a GNOME Shell extension to add a keybinding to
-center the currently focused window. The main implementation is in file
-`extension.js`.
+Center Window Key is a GNOME Shell extension to add keybindings to
+center windows. The main implementation is in file `extension.js`.
 
 ## General Instructions
 
