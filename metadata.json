@@ -2,7 +2,7 @@
   "name": "Center Window Key",
   "description": "Add keybindings to center windows.",
   "uuid": "center-window-key@otsaloma.io",
-  "shell-version": ["49"],
+  "shell-version": ["49", "50"],
   "url": "https://github.com/otsaloma/center-window-key",
   "settings-schema": "org.gnome.shell.extensions.center-window-key",
   "donations": {"paypal": "otsaloma"}
