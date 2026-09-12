@@ -14,7 +14,8 @@ clean:
 compile-schemas:
 	glib-compile-schemas schemas
 
-install: compile-schemas
+install:
+	$(MAKE) compile-schemas
 	mkdir -p $(INSTALL_DIR)
 	cp -f extension.js $(INSTALL_DIR)
 	cp -f metadata.json $(INSTALL_DIR)
@@ -22,7 +23,8 @@ install: compile-schemas
 	cp -f schemas/*.compiled $(INSTALL_DIR)/schemas
 	cp -f schemas/*.xml $(INSTALL_DIR)/schemas
 
-pack: check clean
+pack:
+	$(MAKE) check clean
 	gnome-extensions pack
 
 run:
